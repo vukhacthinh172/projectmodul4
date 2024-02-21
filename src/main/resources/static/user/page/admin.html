@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../style/admin.css">
+</head>
+
+<body>
+    <header>
+        <div class="header__main">
+            <nav class="header__left__nav navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="../../../../../../Desktop/luyentapjava/demoprojectmodul4/src/main/resources/templates/admin/index.html">Trang chủ</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#moveto">Giới thiệu</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Liên hệ</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="../../../../../../Desktop/luyentapjava/demoprojectmodul4/src/main/resources/templates/admin/index.html">Sản Phẩm</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="header__logo"><a href="../../../../../../Desktop/luyentapjava/demoprojectmodul4/src/main/resources/templates/admin/index.html"><img
+                        src="https://static.wixstatic.com/media/a38649d65bd949f1a23175c75483200f.jpg/v1/fill/w_886,h_412,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Ceramica.jpg"
+                        alt="logo" width="150px" height="50px"></a></div>
+            <div class="header__right">
+                <ul>
+                    <li>Xin chào ADMIN</li>
+                    <li onclick='logOut()'><span class="material-symbols-outlined">
+                            logout
+                        </span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="popup__logout">
+        <div class="popup__logout__content">
+            <p>Đang đăng xuất tài khoản</p>
+        </div>
+    </div>
+    <section>
+        <div class="container__users">
+            <div class="table-reponsive">
+                <table class="table table-bordered border-light table-striped">
+                    <p>
+                    <h2>Quản lý người dùng</h2>
+                    </p>
+                    <thead class="table">
+                        <tr>
+                            <td>STT</td>
+                            <td>Email</td>
+                            <td>Password</td>
+                            <td>Id</td>
+                            <td>Tên user</td>
+                            <td>Tình trạng</td>
+                            <td>Hoạt động</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody__users">
+                    </tbody>
+                </table>
+            </div>
+            <div class="popupBlock">
+                <div class="popupBlock__content">
+                    <p>Bạn chắc chắn muốn khóa người dùng này ?</p>
+                    <div class="popupBlock__confirm">
+                        <button onclick="blockUser()" class="blockUser btn btn">Khóa</button>
+                        <button onclick="cancelPopupUser()" class="btn btn">Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container__products">
+            <div class="table-reponsive">
+                <table class="table table-bordered border-light table-striped">
+                    <p>
+                    <h2>Quản lý sản phẩm</h2>
+                    </p>
+                    <p><button onclick="popupAddItem()" class="btn">Thêm sản phẩm mới</button></p>
+                    <!-- Thêm sản phẩm mới -->
+                    <div class="addItem">
+                        <div class="addItem__content">
+                            <h2>Thêm sản phẩm mới</h2>
+                            <div class="upImg">
+                                <label for="uploadImg">Ảnh sản phẩm</label>
+                                <input type="file" id="imageInput" accept=".jpg , .png , .img"><br>
+                            </div>
+                            <input type="text" id="itemName" placeholder="Tên sản phẩm"><br>
+                            <input type="text" id="itemPrice" placeholder="Giá sản phẩm"><br>
+                            <input type="text" id="itemStock" placeholder="Số lượng thêm vào"><br>
+                            <div class="addItem__confirm">
+                                <button onclick="addItem()" class="btn">Thêm sản phẩm</button>
+                                <button onclick="cancelAddItem()" class="btn btn-secondary">Hủy bỏ</button>
+                            </div>
+                        </div>
+                    </div>
+                    <thead class="table">
+                        <tr>
+                            <td>STT</td>
+                            <td>Ảnh</td>
+                            <td>Tên</td>
+                            <td>Id</td>
+                            <td>Giá</td>
+                            <td>Kho hàng</td>
+                            <td>Xóa sản phẩm</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody__products">
+                    </tbody>
+                </table>
+            </div>
+            <div class="popupDelete">
+                <div class="popupDelete__content">
+                    <p>Bạn chắc chắn muốn xóa sản phẩm này ?</p>
+                    <div class="popupDelete__confirm">
+                        <button onclick="deleteItem()" class="deleteItem btn">Xóa</button>
+                        <button onclick="cancelPopupItem()" class="btn">Hủy bỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-white text-muted0" style="background-color: rgb(239, 243, 244)  !important;">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3 text-secondary"></i>GenZ STUDIO
+                        </h6>
+                        <p>
+                            Bạn đang tìm kiếm những sản phẩm gốm sứ độc đáo, tinh tế và phản ánh phong cách cá nhân của
+                            mình? Đừng bỏ lỡ cơ hội trải nghiệm sự độc đáo của đồ gốm GenZ - những tác phẩm nghệ thuật
+                            gốm sứ mang đến cho không gian của bạn một vẻ đẹp đầy tính thẩm mỹ và tinh tế.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Company</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Instagram</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">tiktok</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Twitter</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            About Us
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Facebook</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Instagram</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">tiktok</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Twitter</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3 text-secondary"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Dienmayxanh.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <script src="../js/admin.js"></script>
+</body>
+
+</html>

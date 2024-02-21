@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        tr,
+        td {
+            text-align: center;
+            padding: 15px;
+            width: 200px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        td img {
+            width: 100%;
+            height: 100%;
+        }
+        .btn{
+            background-color:white;
+            color: black;
+            
+           border: none;
+          
+        }
+    </style>
+</head>
+
+<body>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <td>STT</td>
+                <td>Ảnh</td>
+                <td>id</td>
+                <td>Tên sản phẩm </td>
+                <td>Giá</td>
+                <td>Số lượng</td>
+                <td>Tổng giá</td>
+                <td> Xóa sản phẩm </td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            <!--  <tr>
+                <td>1</td>
+                <td>Ảnh</td>
+                <td>5588</td>
+                <td>bánh trung thu </td>
+                <td>1000</td>
+                <td>
+                    <button>-</button>
+                            4
+                    <button>+</button>
+                </td>
+                <td>4000</td>
+                <td occlick="delete()"> xoá </td>
+
+            </tr> -->
+        </tbody>
+    </table>
+    <p class="fs-1" id="total" style="text-align: right;"> </p>
+    <div class="d-grid gap-2 col-6 mx-auto">
+        <a href="./payment.html"> <button class="btn btn-primary" type="button" style="width: 300px;">Payment</button></a>
+    </div>
+    <a href="../../../../../../Desktop/luyentapjava/demoprojectmodul4/src/main/resources/templates/admin/index.html"><button type="button" class="btn btn-secondary btn-lg">Quay lại trang chủ</button></a>
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-white text-muted0" style="background-color: rgb(239, 243, 244)  !important;">
+        <!-- Section: Social media -->
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+            <!-- Left -->
+            <div class="me-5 d-none d-lg-block">
+                <span>Get connected with us on social networks:</span>
+            </div>
+            <!-- Left -->
+
+            <!-- Right -->
+            <div>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 link-secondary">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+            <!-- Right -->
+        </section>
+        <!-- Section: Social media -->
+
+        <!-- Section: Links  -->
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+                <!-- Grid row -->
+                <div class="row mt-3">
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3 text-secondary"></i>GenZ STUDIO
+                        </h6>
+                        <p>
+                            Bạn đang tìm kiếm những sản phẩm gốm sứ độc đáo, tinh tế và phản ánh phong cách cá nhân của
+                            mình? Đừng bỏ lỡ cơ hội trải nghiệm sự độc đáo của đồ gốm GenZ - những tác phẩm nghệ thuật
+                            gốm sứ mang đến cho không gian của bạn một vẻ đẹp đầy tính thẩm mỹ và tinh tế.
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            Products
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Company</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Instagram</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">tiktok</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Twitter</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            About Us
+                        </h6>
+                        <p>
+                            <a href="#!" class="text-reset">Facebook</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Instagram</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">tiktok</a>
+                        </p>
+                        <p>
+                            <a href="#!" class="text-reset">Twitter</a>
+                        </p>
+                    </div>
+                    <!-- Grid column -->
+
+                    <!-- Grid column -->
+                    <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                        <!-- Links -->
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3 text-secondary"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3 text-secondary"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3 text-secondary"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3 text-secondary"></i> + 01 234 567 89</p>
+                    </div>
+                    <!-- Grid column -->
+                </div>
+                <!-- Grid row -->
+            </div>
+        </section>
+        <!-- Section: Links  -->
+
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+            © 2021 Copyright:
+            <a class="text-reset fw-bold" href="https://mdbootstrap.com/">Dienmayxanh.com</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+    <script src="../js/cart.js"></script>
+</body>
+
+</html>

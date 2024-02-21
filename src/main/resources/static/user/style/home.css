@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: rgba(111, 128, 144, 0.201);
+}
+
+.img-fluid{
+    background-position: center center;
+
+}
+.first-hearder{
+    background-color:rgb(204, 204, 204);
+    height: 70px;
+}
+.container-fluid {
+  background-color: rgba(233, 227, 227, 0.91);
+}
+.text-reset{
+    text-decoration: none;
+}
+.search{
+    border: none;
+    background-color:rgb(204, 204, 204) ;
+}
+input:hover{
+    background-color:white ;
+    width: 200px;
+    height: 30px;
+}
